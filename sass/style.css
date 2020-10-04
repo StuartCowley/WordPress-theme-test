@@ -1,0 +1,393 @@
+@font-face {
+  font-family: 'gilroylight';
+  src: url("/wp-content/themes/MCG Tech Test/assets/fonts/gilroy-light-webfont.eot");
+  src: url("/wp-content/themes/MCG Tech Test/assets/fonts/gilroy-light-webfont.eot?#iefix") format("embedded-opentype"), url("/wp-content/themes/MCG Tech Test/assets/fonts/gilroy-light-webfont.woff2") format("woff2"), url("/wp-content/themes/MCG Tech Test/assets/fonts/gilroy-light-webfont.woff") format("woff"), url("/wp-content/themes/MCG Tech Test/assets/fonts/gilroy-light-webfont.ttf") format("truetype"), url("/wp-content/themes/MCG Tech Test/assets/fonts/gilroy-light-webfont.svg#gilroylight") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'gilroybold';
+  src: url("/wp-content/themes/MCG Tech Test/assets/fonts/radomir_tinkov_-_gilroy-bold-webfont.eot");
+  src: url("/wp-content/themes/MCG Tech Test/assets/fonts/radomir_tinkov_-_gilroy-bold-webfont.eot?#iefix") format("embedded-opentype"), url("/wp-content/themes/MCG Tech Test/assets/fonts/radomir_tinkov_-_gilroy-bold-webfont.woff2") format("woff2"), url("/wp-content/themes/MCG Tech Test/assets/fonts/radomir_tinkov_-_gilroy-bold-webfont.woff") format("woff"), url("/wp-content/themes/MCG Tech Test/assets/fonts/radomir_tinkov_-_gilroy-bold-webfont.ttf") format("truetype"), url("/wp-content/themes/MCG Tech Test/assets/fonts/radomir_tinkov_-_gilroy-bold-webfont.svg#gilroybold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'gilroyextrabold';
+  src: url("/wp-content/themes/MCG Tech Test/assets/fonts/gilroy-extrabold-webfont.eot");
+  src: url("/wp-content/themes/MCG Tech Test/assets/fonts/gilroy-extrabold-webfont.eot?#iefix") format("embedded-opentype"), url("/wp-content/themes/MCG Tech Test/assets/fonts/gilroy-extrabold-webfont.woff2") format("woff2"), url("/wp-content/themes/MCG Tech Test/assets/fonts/gilroy-extrabold-webfont.woff") format("woff"), url("/wp-content/themes/MCG Tech Test/assets/fonts/gilroy-extrabold-webfont.ttf") format("truetype"), url("/wp-content/themes/MCG Tech Test/assets/fonts/gilroy-extrabold-webfont.svg#gilroyextrabold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+body {
+  line-height: 1;
+}
+
+button {
+  outline: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+q {
+  display: inline;
+  font-style: italic;
+}
+
+q:before {
+  content: '"';
+  font-style: normal;
+}
+
+q:after {
+  content: '"';
+  font-style: normal;
+}
+
+textarea,
+input[type="text"],
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="search"],
+input[type="password"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  border-radius: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th,
+td {
+  padding: 2px;
+}
+
+big {
+  font-size: 120%;
+}
+
+small,
+sup,
+sub {
+  font-size: 80%;
+}
+
+sup {
+  vertical-align: super;
+}
+
+sub {
+  vertical-align: sub;
+}
+
+dd {
+  margin-left: 20px;
+}
+
+kbd,
+tt {
+  font-family: courier;
+  font-size: 12px;
+}
+
+ins {
+  text-decoration: underline;
+}
+
+del,
+strike,
+s {
+  text-decoration: line-through;
+}
+
+dt {
+  font-weight: bold;
+}
+
+address,
+cite,
+var {
+  font-style: italic;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+}
+
+html {
+  overflow: hidden;
+}
+
+body {
+  font-size: 8px;
+}
+
+body > * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.page-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.main-content {
+  position: relative;
+  min-height: 100vh;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  white-space: nowrap;
+  overflow-x: scroll;
+}
+
+.main-content__header-strip {
+  position: absolute;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 50px;
+  width: 100%;
+}
+
+.main-content__post-wrap {
+  display: inline-block;
+  width: 100%;
+  padding-top: 50px;
+  height: 100%;
+}
+
+/* Sidebars */
+.sidebar-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  max-width: 62px;
+  width: 100%;
+  background-color: orange;
+  padding-top: 40px;
+  padding-bottom: 24px;
+}
+
+.sidebar__text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sidebar__text-wrap {
+  -webkit-transform: translateY(-100%) rotate(90deg);
+          transform: translateY(-100%) rotate(90deg);
+}
+
+.sidebar__text-line {
+  height: 2px;
+  background-color: black;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  margin-right: 10px;
+}
+
+.sidebar--left {
+  left: 0;
+}
+
+.sidebar--right {
+  right: 0;
+}
+
+.sidebar__heading {
+  position: absolute;
+  top: 49%;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  min-width: 160px;
+  text-align: center;
+}
+
+.sidebar__heading-span:nth-of-type(1) {
+  display: inline-block;
+  font-family: gilroylight, sans-serif;
+  font-size: 1em;
+  letter-spacing: 0.4em;
+}
+
+.sidebar__social ul {
+  list-style: none;
+  -webkit-padding-start: 0px;
+          padding-inline-start: 0px;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+}
+
+.sidebar__social ul li {
+  width: 11px;
+  height: 11px;
+}
+
+.sidebar__social ul li:not(:last-child) {
+  margin-bottom: 13px;
+}
+
+.sidebar__social .menu-image {
+  width: 100%;
+  height: 100%;
+}
+
+.sidebar__social .menu-image-title {
+  display: none;
+}
+/*# sourceMappingURL=style.css.map */
