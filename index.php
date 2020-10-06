@@ -4,10 +4,11 @@
 
 	<div class="sidebar-wrap sidebar--left">
 		<div class="sidebar__text-wrap">
-			<div class="sidebar__text">
+			<div class="sidebar__text sidebar__text--with-span">
 				<span class="sidebar__text-line"></span>
-				<span>SCROLL</span></div>
-			<div>TO NAVIGATE</div>
+				<span>SCROLL</span>
+			</div>
+			<div class="sidebar__text sidebar__text--last">TO NAVIGATE</div>
 		</div>
 	</div>
 
@@ -29,10 +30,11 @@
 
 	<div class="sidebar-wrap sidebar--right">
 		<div class="sidebar__heading">
-			<span class="sidebar__heading-span">
+			<div class="sidebar__text">
 				WELCOME TO MCG
-			</span>
+			</div>
 		</div>
+
 		<div class="sidebar__social-wrap">
 		<?php
 			wp_nav_menu( array(
