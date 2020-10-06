@@ -1,0 +1,14 @@
+@mixin text-default {
+	font-family: gilroylight, sans-serif;
+	font-size: 1em;
+}
+
+@mixin text-upper {
+	@include text-default;
+	letter-spacing: 0.4em;
+	text-transform: uppercase;
+}
+
+@mixin text-bold {
+	font-family: gilroybold, sans-serif;
+}
