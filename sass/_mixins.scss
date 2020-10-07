@@ -1,6 +1,7 @@
 @mixin text-default {
 	font-family: gilroylight, sans-serif;
 	font-size: 1em;
+	color: $black;
 }
 
 @mixin text-upper {

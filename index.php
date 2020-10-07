@@ -2,6 +2,18 @@
 
 <div class="page-container">
 
+	<div class="header-wrap">
+		<div class="header-centraliser">
+			<div class="header__element">
+				<?= file_get_contents(get_stylesheet_directory_uri() . '/assets/menu-bars.svg'); ?>
+			</div>
+			<div class="header__element header__element--center">
+				<?= file_get_contents(get_stylesheet_directory_uri() . '/assets/MCG-Logo.svg'); ?>
+			</div>
+			<div class="header__element">En</div>
+		</div>
+	</div>
+
 	<div class="sidebar-wrap sidebar--left">
 		<div class="sidebar__text-wrap">
 			<div class="sidebar__text sidebar__text--with-span">
@@ -39,6 +51,10 @@
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			<div class="main-content__post-wrap">
 				<div class="main-content__rotate">
+					<div class="main-content__background-image-wrap" style="background-color: <?= get_field("background_colour") ?>">
+						<?php $image=get_field("background_image");?>
+						<img class="main-content__background-image" src="<?= $image['url']?>" />
+					</div>
 					<div class="main-content__panel main-content__panel--wide">
 						<div class="main-content__panel-meta">
 							<div class="greeting-wrap">
@@ -54,22 +70,30 @@
 							<div class="title"><?= the_title(); ?></div>
 							<div class="subtitle"><?= get_field("subtitle");?> </div>
 
-							<div class="cta-wrap">
+
+							<a class="cta-wrap" href="<?= get_field("cta")['cta_url'];?>">
 								<div class="cta-arrow">
 									<?= file_get_contents(get_stylesheet_directory_uri() . '/assets/right-arrow.svg'); ?>
 								</div>
 								<div class="cta-text">
 									<?= (get_field("cta")['cta_label']); ?>
 								</div>
-							</div>
+							</a>
 						</div>
 
 					</div>
+					<?php $title = get_field("featured_text");
+						$words = explode(" ", $title);?>
 					<div class="main-content__panel">
-						<h2><?= get_field("featured_text");?> </h2>
+						<div class="main-content__featured-text main-content__featured-text--bottom">
+							<?= $words[0];?>
+						</div>
 					</div>
 					<div class="main-content__panel">
-						3
+						<div class="main-content__featured-text main-content__featured-text--top">
+							<?= $words[1];?>
+						</div>
+
 					</div>
 				</div>
 			</div>
