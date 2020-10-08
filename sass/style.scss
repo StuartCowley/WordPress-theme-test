@@ -2,13 +2,14 @@
 
 @import "./typography";
 
+// Import variables
+
+@import "./variables";
+
 // Resets from blankslate
 
 @import "./resets";
 
-// Import variables
-
-@import "./variables";
 
 // Import mixins
 
@@ -66,7 +67,9 @@ body {
 	}
 }
 
-.main-content {
+$c: '.main-content';
+
+#{$c} {
 	-ms-overflow-style: none;
 	scrollbar-width: none; /* For Firefox */
 	-ms-overflow-style: none;
@@ -76,16 +79,19 @@ body {
 	flex-grow: 1;
 
 	&__horizontal-scroll-wrap{
-	position: absolute;
-	display: block;
-	top: 0;
-	left: 0;
-	width: 100vh;
-	height: calc(100vw - (2 * #{$sidebar-width})) ;
-	overflow-y: auto;
-	transform: rotate(-90deg) translateY(-100vh);
-	transform-origin: right top;
-	background-color: $white;
+		position: absolute;
+		display: block;
+		top: 0;
+		left: 0;
+		width: 100vh;
+		height: calc(100vw - (2 * #{$sidebar-width}));
+		overflow-y: auto;
+		transform: rotate(-90deg) translateY(-100vh);
+		transform-origin: right top;
+		background-color: $white;
+		@media screen and (max-width: $breakpoint-mob){
+			height: calc(100vw - #{$sidebar-width});
+		}
 	}
 
 	&__post-wrap {
@@ -93,6 +99,10 @@ body {
 		display: block;
 		width: 100vh;
 		height: calc(100vw - (2 * #{$sidebar-width}));
+		@media screen and (max-width: $breakpoint-mob) {
+			height: calc(100vw - #{$sidebar-width});
+		}
+
 	}
 
 	&__rotate {
@@ -101,6 +111,18 @@ body {
 		transform-origin: left top;
 		height: 100vh;
 		width: calc(100vw - (2 * #{$sidebar-width}));
+		@media screen and (max-width: $breakpoint-mob) {
+			flex-direction: column;
+			width: calc(100vw - #{$sidebar-width});
+			#{$c}__panel {
+				width: 100%;
+				&--wide {
+					height: 50%;
+				}
+				height: 20%;
+			}
+
+		}
 	}
 
 	&__background-image {
@@ -130,6 +152,16 @@ body {
 			right: 0;
 			transform-origin: bottom right;
 			transform: rotate(90deg);
+		}
+		@media screen and (max-width: $breakpoint-mob) {
+			transform: none;
+			font-size: 6em;
+			&--top {
+				margin-top: 0px;
+			}
+			&--bottom {
+				bottom: 12px;
+			}
 		}
 	}
 
@@ -172,11 +204,17 @@ body {
 				font-size: 4.5em;
 				line-height: 1.2em;
 				margin-bottom: 6px;
+				@media screen and (max-width: $breakpoint-mob){
+					font-size: 3em;
+				}
 			}
 			.subtitle {
 				@include text-default;
 				font-size: 2.4em;
 				margin-bottom: 68px;
+				@media screen and (max-width: $breakpoint-mob) {
+					margin-bottom: 12px;
+				}
 			}
 			.cta {
 				&-wrap {
@@ -193,9 +231,19 @@ body {
 					}
 				}
 			}
+			@media screen and (max-width: $breakpoint-mob) {
+				margin-left: 20px;
+				transform: none;
+			}
+		}
+		@media screen and (max-width: $breakpoint-mob){
+			align-items: end;
 		}
 		&--wide {
 			width: 50%;
+		}
+		&--front {
+			z-index: 1;
 		}
 	}
 
@@ -207,10 +255,17 @@ body {
 			margin-right: 10px;
 			text-align: end;
 			font-size: 1em;
+			@media screen and (max-width: $breakpoint-mob) {
+				font-size: 0.9em;
+				margin-right: 4px;
+			}
 
 		}
 		&-counter {
 			font-size: 3.3em;
+			@media screen and (max-width: $breakpoint-mob) {
+				font-size: 2em;
+			}
 		}
 
 		&-wrap {
@@ -229,6 +284,10 @@ body {
 			display: flex;
 			justify-content: flex-end;
 			width: 25%;
+			@media screen and (max-width: $breakpoint-mob) {
+				width: calc(100% / 3);
+				padding-right: 4px;
+			}
 		}
 	}
 
@@ -273,6 +332,9 @@ body {
 	}
 	&--left {
 		left: 0;
+		@media screen and (max-width: $breakpoint-mob){
+			display: none;
+		}
 	}
 	&--right {
 		right: 0;

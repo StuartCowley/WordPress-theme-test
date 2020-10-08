@@ -25,37 +25,16 @@
 	</div>
 
 	<div class="main-content">
-		<div class="main-content__tab-wrap">
-			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-				<div class="main-content__tab-box">
-					<div class="main-content__tab-name">
-						<?php
-							$title = get_field("tab_title");
-							$words = explode(" ", $title);
-							foreach ($words as $word) {	?>
-								<div>
-									<?=$word?>
-								</div>
-						<?php };?>
-					</div>
-					<div class="main-content__tab-counter">
-						<?= "0" . get_field("tab_number");?>
-					</div>
-				</div>
-			<?php endwhile; else: ?>
-				<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
-				<?php endif; ?>
-		</div>
 
 		<div class="main-content__horizontal-scroll-wrap">
-		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-			<div class="main-content__post-wrap">
+			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+			<div id="<?= get_field('tab_title')?>" class="main-content__post-wrap">
 				<div class="main-content__rotate">
-					<div class="main-content__background-image-wrap" style="background-color: <?= get_field("background_colour") ?>">
+					<div class="main-content__background-image-wrap">
 						<?php $image=get_field("background_image");?>
-						<img class="main-content__background-image" src="<?= $image['url']?>" />
+						<img class="main-content__background-image" src="<?= $image['url'] ?>" />
 					</div>
-					<div class="main-content__panel main-content__panel--wide">
+					<div class="main-content__panel main-content__panel--front main-content__panel--wide">
 						<div class="main-content__panel-meta">
 							<div class="greeting-wrap">
 								<div class="greeting-progress">
@@ -97,6 +76,28 @@
 					</div>
 				</div>
 			</div>
+			<?php endwhile; else: ?>
+				<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+				<?php endif; ?>
+		</div>
+
+		<div class="main-content__tab-wrap">
+			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+				<div class="main-content__tab-box">
+					<div class="main-content__tab-name">
+						<?php
+							$title = get_field("tab_title");
+							$words = explode(" ", $title);
+							foreach ($words as $word) {	?>
+								<a href="#<?= get_field("tab_title") ?>">
+									<?=$word?>
+								</a>
+						<?php };?>
+					</div>
+					<div class="main-content__tab-counter">
+						<?= "0" . get_field("tab_number");?>
+					</div>
+				</div>
 			<?php endwhile; else: ?>
 				<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
 				<?php endif; ?>
