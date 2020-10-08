@@ -99,6 +99,7 @@ $c: '.main-content';
 		display: block;
 		width: 100vh;
 		height: calc(100vw - (2 * #{$sidebar-width}));
+		overflow: hidden;
 		@media screen and (max-width: $breakpoint-mob) {
 			height: calc(100vw - #{$sidebar-width});
 		}

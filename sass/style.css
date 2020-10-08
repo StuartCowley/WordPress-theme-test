@@ -355,6 +355,7 @@ body > * {
   display: block;
   width: 100vh;
   height: calc(100vw - (2 * 62px));
+  overflow: hidden;
 }
 
 @media screen and (max-width: 480px) {
