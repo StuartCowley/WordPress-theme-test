@@ -26,7 +26,7 @@
 
 	<div class="main-content">
 
-		<div class="main-content__horizontal-scroll-wrap">
+		<div id="scrollwrap" class="main-content__horizontal-scroll-wrap">
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			<div id="<?= get_field('tab_title')?>" class="main-content__post-wrap">
 				<div class="main-content__rotate">
@@ -35,7 +35,7 @@
 						<img class="main-content__background-image" src="<?= $image['url'] ?>" />
 					</div>
 					<div class="main-content__panel main-content__panel--front main-content__panel--wide">
-						<div class="main-content__panel-meta">
+						<div id="<?= get_field('tab_title')?>__meta" class="main-content__panel-meta">
 							<div class="greeting-wrap">
 								<div class="greeting-progress">
 									<span>01</span>
@@ -64,12 +64,12 @@
 					<?php $title = get_field("featured_text");
 						$words = explode(" ", $title);?>
 					<div class="main-content__panel">
-						<div class="main-content__featured-text main-content__featured-text--bottom">
+						<div id="<?= get_field('tab_title')?>__featured--bottom" class="main-content__featured-text main-content__featured-text--bottom">
 							<?= $words[0];?>
 						</div>
 					</div>
 					<div class="main-content__panel">
-						<div class="main-content__featured-text main-content__featured-text--top">
+						<div id="<?= get_field('tab_title')?>__featured--top" class="main-content__featured-text main-content__featured-text--top">
 							<?= $words[1];?>
 						</div>
 
@@ -83,19 +83,22 @@
 
 		<div class="main-content__tab-wrap">
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-				<div class="main-content__tab-box">
-					<div class="main-content__tab-name">
-						<?php
-							$title = get_field("tab_title");
-							$words = explode(" ", $title);
-							foreach ($words as $word) {	?>
-								<a href="#<?= get_field("tab_title") ?>">
-									<?=$word?>
-								</a>
-						<?php };?>
-					</div>
-					<div class="main-content__tab-counter">
-						<?= "0" . get_field("tab_number");?>
+				<div class="main-content__tab-box-wrap">
+					<?php $new_location = get_field("tab_title"); ?>
+					<div id="<?= get_field('tab_title')?>__tab" onclick="jump('<?= $new_location ?>')" class="main-content__tab-box">
+						<div class="main-content__tab-name">
+							<?php
+								$title = get_field("tab_title");
+								$words = explode(" ", $title);
+								foreach ($words as $word) {	?>
+									<div>
+										<div><?=$word?></div>
+									</div>
+							<?php };?>
+						</div>
+						<div class="main-content__tab-counter">
+							<?= "0" . get_field("tab_number");?>
+						</div>
 					</div>
 				</div>
 			<?php endwhile; else: ?>
