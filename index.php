@@ -46,7 +46,7 @@
 									<?= get_field("greeting");?>
 								</div>
 							</div>
-							<div class="title"><?= the_title(); ?></div>
+							<div class="title"><?= get_field("title"); ?></div>
 							<div class="subtitle"><?= get_field("subtitle");?> </div>
 
 

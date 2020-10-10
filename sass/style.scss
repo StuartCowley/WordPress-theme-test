@@ -144,23 +144,25 @@ $c: '.main-content';
 		font-size: 17.7em;
 		color: $grey;
 		opacity: 0;
-		transform: rotate(90deg) translateX(-200px);
+		// transform: rotate(90deg) translateX(-200px);
 		transition: opacity 2.5s, transform 2.5s;
 
-		&--active {
-			opacity: 1;
-			transform: rotate(90deg) translateX(0px);
-		}
 		&--top {
 			transform-origin: top left;
 			margin-top: 120px;
+			transform: rotate(90deg) translateX(-200px);
 			transition-delay: 2.75s;
 		}
 		&--bottom {
 			position: absolute;
 			right: 0;
 			transform-origin: bottom right;
+			transform: rotate(90deg) translateX(200px);
 			transition-delay: 2s;
+		}
+		&--active {
+			opacity: 1;
+			transform: rotate(90deg) translateX(0px);
 		}
 		@media screen and (max-width: $breakpoint-mob) {
 			transform: none;
