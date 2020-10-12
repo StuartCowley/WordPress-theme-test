@@ -71,7 +71,6 @@ $c: '.main-content';
 
 #{$c} {
 	-ms-overflow-style: none;
-	scrollbar-width: none; /* For Firefox */
 	-ms-overflow-style: none;
 
 	position: relative;
@@ -89,6 +88,7 @@ $c: '.main-content';
 		transform: rotate(-90deg) translateY(-100vh);
 		transform-origin: right top;
 		background-color: $white;
+		scrollbar-width: none; /* For Firefox */
 		@media screen and (max-width: $breakpoint-mob){
 			height: calc(100vw - #{$sidebar-width});
 		}
@@ -103,7 +103,6 @@ $c: '.main-content';
 		@media screen and (max-width: $breakpoint-mob) {
 			height: calc(100vw - #{$sidebar-width});
 		}
-
 	}
 
 	&__rotate {
@@ -122,7 +121,6 @@ $c: '.main-content';
 				}
 				height: 20%;
 			}
-
 		}
 	}
 
@@ -136,6 +134,11 @@ $c: '.main-content';
 			width: 100%;
 			height: 100%;
 			overflow: hidden;
+			opacity: 0.25;
+			transition: opacity 2.5s ease-in-out;
+			&--active {
+				opacity: 1;
+			}
 		}
 	}
 
@@ -144,7 +147,6 @@ $c: '.main-content';
 		font-size: 17.7em;
 		color: $grey;
 		opacity: 0;
-		// transform: rotate(90deg) translateX(-200px);
 		transition: opacity 2.5s, transform 2.5s;
 
 		&--top {
@@ -172,6 +174,7 @@ $c: '.main-content';
 			}
 			&--bottom {
 				bottom: 12px;
+				transform: translateX(-50%);
 			}
 		}
 	}
@@ -203,66 +206,67 @@ $c: '.main-content';
 					}
 				}
 			}
-			.greeting {
-				font-size: 0.9em;
-				&-progress {
-					display: flex;
-					align-items: center;
-					margin-right: 12px;
-					font-size: 0.7em;
-					&-line {
-						display: inline-block;
-						height: 1px;
-						width: 36px;
-						background-color: $black;
-						margin-left: 8px;
-						margin-right: 8px;
-					}
-				}
-				&-wrap {
-					display: flex;
-					@include text-default;
-					font-size: 1.6em;
-					margin-bottom: 4px;
-				}
-			}
-			.title {
-				@include text-bold;
-				font-size: 4.5em;
-				line-height: 1.2em;
-				margin-bottom: 6px;
-				@media screen and (max-width: $breakpoint-mob){
-					font-size: 3em;
-				}
-			}
-			.subtitle {
-				@include text-default;
-				font-size: 2.4em;
-				margin-bottom: 68px;
-				@media screen and (max-width: $breakpoint-mob) {
-					margin-bottom: 12px;
-				}
-			}
-			.cta {
-				&-wrap {
-					display: inline-flex;
-					align-items: center;
-					@include text-upper;
-				}
-				&-arrow {
-					width: 13px;
-					margin-right: 10px;
-					svg {
-						width: 100%;
-						height: 100%;
-					}
-				}
-			}
 			@media screen and (max-width: $breakpoint-mob) {
 				margin-left: 20px;
 				transform: none;
 			}
 		}
+		&-greeting {
+			font-size: 0.9em;
+			&-progress {
+				display: flex;
+				align-items: center;
+				margin-right: 12px;
+				font-size: 0.7em;
+				&-line {
+					display: inline-block;
+					height: 1px;
+					width: 36px;
+					background-color: $black;
+					margin-left: 8px;
+					margin-right: 8px;
+				}
+			}
+			&-wrap {
+				display: flex;
+				@include text-default;
+				font-size: 1.6em;
+				margin-bottom: 4px;
+			}
+		}
+		&-title {
+			@include text-bold;
+			font-size: 4.5em;
+			line-height: 1.2em;
+			margin-bottom: 6px;
+			@media screen and (max-width: $breakpoint-mob){
+				font-size: 3em;
+			}
+		}
+		&-subtitle {
+			@include text-default;
+			font-size: 2.4em;
+			margin-bottom: 68px;
+			@media screen and (max-width: $breakpoint-mob) {
+				margin-bottom: 12px;
+			}
+		}
+		&-cta {
+			&-wrap {
+				display: inline-flex;
+				align-items: center;
+				@include text-upper;
+			}
+			&-arrow {
+				width: 13px;
+				margin-right: 10px;
+				svg {
+					width: 100%;
+					height: 100%;
+				}
+			}
+		}
+
 		@media screen and (max-width: $breakpoint-mob){
 			align-items: end;
 		}

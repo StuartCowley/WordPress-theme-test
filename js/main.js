@@ -10,17 +10,20 @@ let tabBoxes;
 let currentTab;
 let featuredText;
 let metaPanels;
+let backgroundImages;
 
 setTimeout(() => {
 	tabBoxes = document.querySelectorAll('.main-content__tab-box');
 	currentTab = document.getElementById('About MCG');
 	featuredText = document.querySelectorAll('.main-content__featured-text');
 	metaPanels = document.querySelectorAll('.main-content__panel-meta');
+	backgroundImages = document.querySelectorAll('.main-content__background-image-wrap');
 
-	currentTab.classList.add('main-content__tab-box--active')
+	tabBoxes[0].classList.add('main-content__tab-box--active')
 	metaPanels[0].classList.add('main-content__panel-meta--active')
 	featuredText[0].classList.add('main-content__featured-text--active')
 	featuredText[1].classList.add('main-content__featured-text--active')
+	backgroundImages[0].classList.add('main-content__background-image-wrap--active')
 }, 100);
 
 
@@ -48,6 +51,13 @@ const changeActiveTab = (newVal) => {
 		const bottomFeaturedId = `${newVal}__featured--bottom`;
 		document.getElementById(topFeaturedId).classList.add('main-content__featured-text--active')
 		document.getElementById(bottomFeaturedId).classList.add('main-content__featured-text--active')
+
+		// Background Image
+		for (var i=0; i<backgroundImages.length; i++) {
+			backgroundImages[i].classList.remove('main-content__background-image-wrap--active');
+		}
+		const bgImg = `${newVal}__bgImg`;
+		document.getElementById(bgImg).classList.add('main-content__background-image-wrap--active')
 
 		// Update current tab
 		currentTab = newVal

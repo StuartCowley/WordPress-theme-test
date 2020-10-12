@@ -30,31 +30,32 @@
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			<div id="<?= get_field('tab_title')?>" class="main-content__post-wrap">
 				<div class="main-content__rotate">
-					<div class="main-content__background-image-wrap">
+					<div id="<?= get_field('tab_title')?>__bgImg" class="main-content__background-image-wrap">
 						<?php $image=get_field("background_image");?>
 						<img class="main-content__background-image" src="<?= $image['url'] ?>" />
 					</div>
 					<div class="main-content__panel main-content__panel--front main-content__panel--wide">
 						<div id="<?= get_field('tab_title')?>__meta" class="main-content__panel-meta">
-							<div class="greeting-wrap">
-								<div class="greeting-progress">
-									<span>01</span>
-									<span class="greeting-progress-line"></span>
-									<span>02</span>
+							<div class="main-content__panel-greeting-wrap">
+								<div class="main-content__panel-greeting-progress">
+									<span>0<?= $wp_query->current_post + 1; ?></span>
+									<?php if ($wp_query->post_count !== $wp_query->current_post +1 ): ?>
+										<span class="main-content__panel-greeting-progress-line"></span>
+										<span>0<?= $wp_query->current_post + 2; ?></span>
+									<?php endif; ?>
 								</div>
-								<div class="greeting">
+								<div class="main-content__panel-greeting">
 									<?= get_field("greeting");?>
 								</div>
 							</div>
-							<div class="title"><?= get_field("title"); ?></div>
-							<div class="subtitle"><?= get_field("subtitle");?> </div>
+							<div class="main-content__panel-title"><?= get_field("title"); ?></div>
+							<div class="main-content__panel-subtitle"><?= get_field("subtitle");?> </div>
 
-
-							<a class="cta-wrap" href="<?= get_field("cta")['cta_url'];?>">
-								<div class="cta-arrow">
+							<a class="main-content__panel-cta-wrap" href="<?= get_field("cta")['cta_url'];?>">
+								<div class="main-content__panel-cta-arrow">
 									<?= file_get_contents(get_stylesheet_directory_uri() . '/assets/right-arrow.svg'); ?>
 								</div>
-								<div class="cta-text">
+								<div class="main-content__panel-cta-text">
 									<?= (get_field("cta")['cta_label']); ?>
 								</div>
 							</a>
